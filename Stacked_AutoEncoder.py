@@ -5,6 +5,8 @@ Created on Mon Jul  2 14:42:38 2018
 @author: Tathagat Dasgupta
 """
 
+import os
+from pathlib import Path
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -13,7 +15,8 @@ import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
 from tensorflow.contrib.layers import fully_connected
 
-mnist=input_data.read_data_sets("/MNIST_data/",one_hot=True)
+mnist_data_dir = os.path.join(Path.home(),"MNIST_data/")
+mnist=input_data.read_data_sets(mnist_data_dir,one_hot=True)
 
 tf.reset_default_graph()
 
